@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.statement {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.rates {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.rates p {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.flag-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rates {
+    flex-direction: column;
+  }
+
+  .rates p {
+    margin-bottom: 10px;
+  }
+
+  .converter {
+    flex-direction: column;
+  }
+
+  input[type="number"], select {
+    max-width: 100%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  .statement {
+    font-size: 1.5rem;
+  }
+
+  .rates p {
+    font-size: 1rem;
+  }
+
+  input[type="number"], select {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

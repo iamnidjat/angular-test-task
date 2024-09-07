@@ -1,0 +1,21 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+p {
+  margin: 0 10px;
+}
+
+.flag-icon {
+  width: 25px;
+  margin-right: 10px;
+}

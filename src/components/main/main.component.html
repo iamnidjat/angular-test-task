@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<div class="main-container">
+  <div class="converter">
+    <div class="currency-input">
+      <input type="number" min="1" [(ngModel)]="amount1" (input)="convert('first')"/>
+      <select [(ngModel)]="currency1" (change)="convert('first')">
+        <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+      </select>
+    </div>
+
+    <div class="currency-input">
+      <input type="number" min="1" [(ngModel)]="amount2" (input)="convert('second')"/>
+      <select [(ngModel)]="currency2" (change)="convert('second')">
+        <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
