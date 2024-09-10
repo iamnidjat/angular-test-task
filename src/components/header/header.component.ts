@@ -1,18 +1,20 @@
 import {Component, OnInit} from '@angular/core';
 import {CurrencyService} from "../../services/currency.service";
-import {NgIf} from "@angular/common";
+import {DecimalPipe, NgIf} from "@angular/common";
+import {CurrencyApiResponse} from "../../models/CurrencyApiResponse";
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    DecimalPipe
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
-  public rates: any;
+  public rates: CurrencyApiResponse | null = null;
 
   constructor(private currencyService: CurrencyService) {}
 

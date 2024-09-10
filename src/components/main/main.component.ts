@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormsModule} from "@angular/forms";
-import {NgForOf} from "@angular/common";
+import {CurrencyPipe, NgForOf} from "@angular/common";
 import {CurrencyService} from "../../services/currency.service";
 import {HeaderComponent} from "../header/header.component";
-import {CurrencyApiResponse, Rates} from "../../models/CurrencyApiResponse";
+import {Rates} from "../../models/CurrencyApiResponse";
 
 @Component({
   selector: 'app-main',
@@ -11,7 +11,8 @@ import {CurrencyApiResponse, Rates} from "../../models/CurrencyApiResponse";
   imports: [
     FormsModule,
     NgForOf,
-    HeaderComponent
+    HeaderComponent,
+    CurrencyPipe
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
@@ -42,8 +43,9 @@ export class MainComponent implements OnInit{
 
     const rateFrom = from === 'UAH' ? 1 : this.rates![from];
     const rateTo = to === 'UAH' ? 1 : this.rates![to];
+    const convertedAmount = (amount / rateFrom) * rateTo;
 
-    return (amount / rateFrom) * rateTo;
+    return parseFloat(convertedAmount.toFixed(4));
   }
 
   ngOnInit(): void {

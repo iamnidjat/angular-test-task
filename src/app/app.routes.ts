@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import {AppComponent} from "./app.component";
-import {HeaderComponent} from "../components/header/header.component";
 import {MainComponent} from "../components/main/main.component";
 import {NotFoundComponent} from "../components/not-found/not-found.component";
 

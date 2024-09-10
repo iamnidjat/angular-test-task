@@ -1,8 +1,8 @@
 <div class="main-container">
   <h1 class="statement">Currency rates</h1>
   <div class="rates" *ngIf="rates">
-    <p><img src="assets/flags/usa.svg" alt="US Flag" class="flag-icon">USD: {{ rates.rates.USD }} <i class="fa fa-dollar-sign"></i></p>
-    <p><img src="assets/flags/europe.svg" alt="EU Flag" class="flag-icon">EUR: {{ rates.rates.EUR }} <i class="fa fa-euro-sign"></i></p>
-    <p><img src="assets/flags/azerbaijan.svg" alt="AZ Flag" class="flag-icon">AZN: {{ rates.rates.AZN }} <i class="fa fa-manat-sign"></i></p>
+    <p><img src="assets/flags/usa.svg" alt="US Flag" class="flag-icon">1 USD = {{ (1 / rates.rates.USD) | number :'1.2-4' }} UAH</p>
+    <p><img src="assets/flags/europe.svg" alt="EU Flag" class="flag-icon">1 EUR = {{ (1 / rates.rates.EUR) | number :'1.2-4' }} UAH</p>
+    <p><img src="assets/flags/azerbaijan.svg" alt="AZ Flag" class="flag-icon">1 AZN = {{ (1 / rates.rates.AZN) | number :'1.2-4' }} UAH</p>
   </div>
 </div>
